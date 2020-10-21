@@ -1,0 +1,578 @@
+.flow {
+  width: 100%;
+  height: 100%;
+  background-color: #EDF0F2;
+  padding: 0 2 * @standardPadding 2 * @standardPadding 2 * @standardPadding;
+
+  .flowForm {
+    height: 100%;
+
+    .dataCenter-form-item {
+      margin: 0;
+    }
+  }
+
+  .flowHeader {
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .backBtn {
+        color: @standardColor;
+        cursor: pointer;
+
+        .btnIcon {
+          margin-right: 0.5 * @standardPadding;
+        }
+      }
+
+      .prefix {
+        height: 16px;
+        width: 1px;
+        background-color: #D8D8D8;
+        margin: 0 @standardPadding;
+      }
+
+      .title {
+        font-weight: @standardFontBoldWeight;
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .settingBtn {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid @standardColor;
+        border-radius: @standardRadius;
+        background-color: #ffffff;
+        margin-left: @standardPadding;
+        cursor: pointer;
+      }
+    }
+
+    .right {
+      .sqlBtn, .runBtn, .debuggerBtn {
+        margin-right: 0.5 * @standardPadding;
+      }
+    }
+  }
+
+  .flowContent {
+    position: relative;
+    height: ~'calc(100% - 48px)';
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    pointer-events: stroke;
+
+    .flowCanvas {
+      box-sizing: border-box;
+      flex: 1 1 auto;
+      float: left;
+      //width: ~'calc(100% - 240px)';
+      height: 100%;
+    }
+
+    .pageSettingForm {
+      height: 100%;
+    }
+
+    .nodeDetailWrapper {
+      height: 100%;
+      position: relative;
+
+      .header {
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 1px solid #D8D8D8;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 @standardPadding 0 2 * @standardPadding;
+
+        .closeBtn {
+          cursor: pointer;
+        }
+
+        .label {
+          display: flex;
+          align-items: center;
+          //border-left: 2px solid @standardColor;
+          position: relative;
+          height: 24px;
+          font-weight: @standardFontBoldWeight;
+
+          &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 12px;
+            background: @standardColor;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -6px;
+          }
+
+        }
+      }
+
+      .content {
+        height: ~'calc(100% - 60px - 60px)';
+        width: 100%;
+      }
+    }
+
+    .flowSide {
+      position: absolute;
+      right: -324px;
+      top: 0;
+      height: 100%;
+      width: 300px;
+      flex: 0 0 300px;
+      border-left: 1px solid #D8D8D8;
+      background-color: #ffffff;
+
+      .dataCenter-tabs-bar {
+        box-sizing: border-box;
+        padding: 0 @standardPadding;
+      }
+
+      .closeBtn {
+        cursor: pointer;
+      }
+
+      .dataCenter-tabs {
+        height: ~'calc(100% - 60px)'
+      }
+
+      .dataCenter-tabs-content {
+        height: ~'calc(100% - 41px)'
+      }
+
+      .dataCenter-tabs-bar {
+        margin: 0;
+      }
+
+      .tabWrapper {
+        height: ~'calc(100%)';
+        width: 100%;
+        box-sizing: border-box;
+
+        .formItem {
+          margin-bottom: @standardPadding;
+        }
+
+        .tab {
+          height: 100%;
+          box-sizing: border-box;
+          padding: 0 @standardPadding;
+        }
+
+        .dataCenter-form-item-label {
+          line-height: 2 * @standardPadding;
+        }
+
+        .label {
+          font-weight: @standardFontBoldWeight;
+        }
+
+        .delayWrapper {
+          display: flex;
+          flex-direction: row;
+
+          .delay {
+            width: 70%;
+            flex: 0 0 70%;
+            margin-right: 5%;
+          }
+
+          .delayInterval {
+            flex: 1 1 auto;
+
+            .dataCenter-col {
+              margin-top: 20px;
+            }
+          }
+        }
+
+        .tagsWrapper {
+          .dataCenter-form-item-children {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+
+          .delay {
+            width: 70%;
+            flex: 0 0 70%;
+          }
+
+          .tags {
+            width: 75%;
+            flex: 0 0 75%;
+          }
+        }
+      }
+
+      .title {
+        font-weight: @standardFontBoldWeight;
+        line-height: 3 * @standardPadding;
+      }
+
+
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid #D8D8D8;
+
+        .saveBtn {
+          width: 80px;
+          background-color: @standardColor;
+          color: #ffffff;
+          margin-left: 2 * @standardPadding;
+        }
+
+        .cancelBtn {
+          width: 80px;
+        }
+      }
+    }
+
+    .flowSideBar-enter {
+      right: -324px;
+    }
+
+    .flowSideBar-enter-active {
+      right: 0;
+      transition: all 300ms ease-in;
+    }
+
+    .flowSideBar-enter-done {
+      right: 0;
+    }
+
+    .flowSideBar-exit {
+      right: 0;
+    }
+
+    .flowSideBar-exit-active {
+      right: -324px;
+      transition: all 300ms ease-out;
+    }
+
+    .flowSideBar-exit-done {
+      right: -324px;
+    }
+    .nodes {
+      float: left;
+      height: 100%;
+      width: 240px;
+      flex: 0 0 240px;
+      box-sizing: border-box;
+      padding: 0 @standardPadding;
+      border-right: 1px solid #D8D8D8;
+      user-select: none;
+
+      .items {
+        border-bottom: 1px solid #D8D8D8;
+        //display: flex;
+        //flex-direction: row;
+        user-select: none;
+
+        box-sizing: border-box;
+        padding: @standardPadding 0;
+
+        .title {
+          text-align: left;
+          font-weight: @standardFontBoldWeight;
+        }
+
+        .itemsContent {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          user-select: none;
+
+          padding: @standardPadding 0;
+        }
+      }
+
+      .item {
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: @standardPadding;
+
+        .type {
+          cursor: pointer;
+          user-select: none;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #FFFFFF;
+          border: 1px solid #CCCCCC;
+          box-shadow: 0 2px 8px 0 rgba(55, 70, 95, 0.20);
+          margin-bottom: @standardPadding;
+        }
+      }
+    }
+
+    .flinkWrapper {
+      height: 100%;
+      box-sizing: border-box;
+      padding: 0 @standardPadding;
+
+      .dataCenter-form-item {
+        margin: 0;
+      }
+    }
+
+    .kafkaWrapper {
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 @standardPadding;
+
+      .dataCenter-form-item {
+        margin: 0;
+      }
+
+      .label {
+        font-weight: @standardFontBoldWeight;
+      }
+
+      .typeWrapper {
+        margin-bottom: @standardPadding;
+
+        .title {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0 @standardPadding;
+          display: flex;
+          flex-direction: row;
+
+          .fieldLabel {
+            text-align: left;
+            width: 55%;
+            flex: 0 0 55%;
+          }
+
+          .typeLabel {
+            text-align: left;
+            flex: 1 1 auto;
+          }
+        }
+
+        .typeItem {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          //justify-content: space-between;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0 @standardPadding;
+          background-color: #F4F6FA;
+          height: 44px;
+
+          .field {
+            width: 50%;
+            flex: 0 0 50%;
+            margin-right: 5%;
+          }
+
+          .type {
+            width: 35%;
+            flex: 0 0 35%;
+            margin-right: 5%;
+          }
+
+          .deleteBtn {
+            flex: 1 1 auto;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .waterMarkWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        .waterMark {
+          width: 70%;
+          margin-right: 5%;
+        }
+
+        .waterMarkInterval {
+          flex: 1 1 auto;
+
+          .dataCenter-col {
+            margin-top: 39px;
+          }
+        }
+      }
+    }
+
+    .outPutToSource {
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 @standardPadding;
+
+      .dataCenter-form-item {
+        margin: 0;
+      }
+    }
+
+    .outputToKafka {
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 @standardPadding;
+
+      .showMore {
+        color: @standardColor;
+        font-size: @standardFontSize;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .moreBtn {
+        margin-left: 0.5 * @standardPadding;
+      }
+
+      .dataCenter-form-item {
+        margin: 0;
+      }
+
+      .label {
+        font-weight: @standardFontBoldWeight;
+      }
+
+      .typeWrapper {
+        margin-bottom: @standardPadding;
+
+        .title {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0 @standardPadding;
+          display: flex;
+          flex-direction: row;
+
+          .fieldLabel {
+            text-align: left;
+            width: 45%;
+            flex: 0 0 45%;
+          }
+
+          .typeLabel {
+            text-align: left;
+            width: 35%;
+            flex: 0 0 35%;
+            //flex: 1 1 auto;
+          }
+
+          .isNullLabel {
+            text-align: center;
+            width: 20%;
+            flex: 0 0 20%;
+          }
+        }
+
+        .typeItem {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          //justify-content: space-between;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0 @standardPadding;
+          background-color: #F4F6FA;
+          height: 44px;
+
+          .field {
+            width: 40%;
+            flex: 0 0 40%;
+            margin-right: 5%;
+          }
+
+          .type {
+            width: 35%;
+            flex: 0 0 35%;
+            margin-right: 5%;
+          }
+
+          .isNull {
+            width: 5%;
+            flex: 0 0 5%;
+            margin-right: 5%;
+            //display: flex;
+            //justify-content: center;
+          }
+
+          .deleteBtn {
+            flex: 1 1 auto;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.virtualDiv {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+  border: 1px solid #CCCCCC;
+  box-shadow: 0 2px 8px 0 rgba(55, 70, 95, 0.20);
+}
+
+.Kafka {
+  background: #ffffff url("./svgs/kafka.svg") no-repeat center center;
+
+}
+
+.Flink {
+  background: #ffffff url("./svgs/flink.svg") no-repeat center center;
+
+}
+
+.ToKafka {
+  background: #ffffff url("./svgs/toKafka.svg") no-repeat center center;
+
+}
+
+.ToSource {
+  background: #ffffff url("./svgs/toSource.svg") no-repeat center center;
+
+}

@@ -1,0 +1,32 @@
+.@{project}{
+	&-bread-container {
+		height: 42px;
+		line-height: 42px;
+		width: 100%;
+		background: @header-background;
+		padding: 0 15px;
+
+		.@{ant-prefix}-breadcrumb {
+			color: @main-color;
+			display: inline-block;
+			font-weight: bold;
+			font-size: 12px;
+
+			.@{ant-prefix}-breadcrumb-separator {
+				color: @main-color;
+			}
+
+			a {
+				color: @main-active-color;
+			}
+		}
+
+		.@{ant-prefix}-breadcrumb > span:last-child {
+			color: @main-color;
+
+			.@{ant-prefix}-breadcrumb-separator {
+				display: none;
+			}
+		}
+	}
+}

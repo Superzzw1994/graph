@@ -1,0 +1,33 @@
+#@{main-container}{
+	.@{ant-prefix}-tooltip {
+		.@{ant-prefix}-tooltip-content {
+			.@{ant-prefix}-tooltip-inner {
+				max-width: 250px;
+				padding: 6px 8px;
+				text-align: left;
+				text-decoration: none;
+				border-radius: 4px;
+				box-shadow: 0 2px 8px @main-shadow;
+				min-height: 32px;
+				word-wrap: break-word;
+				background: @main-background;
+				color: @form-font;
+			}
+
+			.@{ant-prefix}-tooltip-arrow {
+				display: none;
+			}
+		}
+
+		&.dark{
+			.@{ant-prefix}-tooltip-content {
+				.@{ant-prefix}-tooltip-inner {
+					box-shadow: 0 2px 8px @dark-tooltip-shadow;
+					background: @dark-tooltip-back;
+					color: @dark-tooltip-font;
+				}
+			}
+		}
+
+	}
+}

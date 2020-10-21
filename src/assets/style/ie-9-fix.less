@@ -1,0 +1,77 @@
+.@{ant-prefix}-sider-nav {
+    float: left;
+    height: 100%;
+}
+.@{ant-prefix}-layout-main-container {
+    height: 100%;
+    .@{ant-prefix}-sider-nav {
+        float: left;
+    }
+    .@{ant-prefix}-layout-content-container {
+        width: calc(~"100% - 200px");
+        float: left;
+        height: 100%;
+        .log-time-window-con {
+            line-height: 30px;
+            .value {
+                float: left;
+            }
+            .suffix-icon {
+                float: left;
+            }
+        }
+        .@{ant-prefix}-tabs-content {
+            margin-left: 0px!important;
+            .react-datepicker__month-read-view {
+                width: 52px;
+            }
+            .react-datepicker__year-read-view {
+                width: 64px;
+            }
+        }
+        .@{ant-prefix}-nav-bar {
+            display: flex;
+            white-space: nowrap;
+            width: 100%;
+            .@{ant-prefix}-nav-title-container {
+                display: inline-block;
+                img {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-top: 0px;
+                }
+                div {
+                    display: inline-block;
+                    width: 100%;
+                    vertical-align: top;
+                }
+            }
+            .@{ant-prefix}-nav-action-container {
+                width: 24px;
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
+        .@{ant-prefix}-data-none-contianer {
+            position: relative;
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+        .@{ant-prefix}-report-content {
+            position: relative;
+            .@{ant-prefix}-nodata {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+    }
+    .@{ant-prefix}-layout-content-container-collapsed {
+        width: calc(~"100% - 56px");
+    }
+}

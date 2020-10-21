@@ -1,0 +1,12 @@
+# tmp file
+.DS_Store
+__MACOSX/
+
+# IDE
+.idea
+
+# ui
+node_modules
+.history
+
+/dataCenterWeb

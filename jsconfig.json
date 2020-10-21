@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "target": "es2017",
+      "allowSyntheticDefaultImports": false,
+      "baseUrl": "./",
+      "paths": {
+        "@/*": ["src/*"],
+        "SRC_COMP/*": ["src/components/*"],
+        "SRC_CONFIG/*": ["src/components/common/*"],
+        "SRC_PAGE/*": ["src/pages/*"],
+        "SRC_UTILS/*": ["src/utils/*"],
+        "SRC_API/*": ["src/api/*"],
+        "SRC_ASSETS/*": ["src/assets/*"],
+        "react-intl": ["src/components/modules/react-intl"]
+      }
+    },
+    "exclude": ["node_modules", "dist"],
+    "include": ["src"]
+  }

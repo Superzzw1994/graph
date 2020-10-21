@@ -1,0 +1,22 @@
+#@{main-container}{
+	.@{ant-prefix}-modal-wrap{
+		z-index: 1000;
+	}
+	.@{ant-prefix}-confirm {
+
+		&.dark{
+			.@{ant-prefix}-modal-content {
+				background: @dark-modal-body-back;
+				color: @dark-modal-body-font;
+				box-shadow: 0 2px 8px @dark-modal-shadow;
+			}
+			.@{ant-prefix}-modal-confirm-body .@{ant-prefix}-modal-confirm-title{
+				color: @dark-modal-body-font;
+			}
+			.@{ant-prefix}-modal-confirm-body .@{ant-prefix}-modal-confirm-content{
+				color: @dark-modal-body-font;
+			}
+		}
+
+	}
+}

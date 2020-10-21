@@ -1,0 +1,106 @@
+#@{main-container}{
+	.@{ant-prefix}-modal {
+		.@{ant-prefix}-modal-header {
+			height: 42px;
+			line-height: 42px;
+			box-sizing: border-box;
+			background: @body-background;
+			border: 1px solid @main-border;
+			border-bottom: none;
+			color: @form-font;
+			font-size: 14px;
+			padding-top: 0px;
+			padding-bottom: 0px;
+			background-image: linear-gradient(180deg, #F3F3F3 0%, #D9DBDE 100%);
+
+			.@{ant-prefix}-modal-title {
+				line-height: 42px;
+				color: @form-font;
+			}
+		}
+
+		.@{ant-prefix}-modal-close-x {
+			height: 42px;
+			line-height: 42px;
+		}
+
+		.@{ant-prefix}-modal-footer {
+			border-top: none;
+
+			&>div {
+				text-align: center;
+			}
+
+			.@{ant-prefix}-form-on{
+				background: none;
+			}
+		}
+
+		&.dark{
+			.@{ant-prefix}-modal-header {
+				background: @dark-modal-head-back;
+				border: 1px solid @dark-modal-head-border;
+				color: @dark-modal-head-font;
+				.@{ant-prefix}-modal-title {
+					color: @dark-modal-head-font;
+				}
+			}
+			.@{ant-prefix}-modal-body{
+				background: @dark-modal-body-back;
+				color: @dark-modal-body-font;
+				.@{ant-prefix}-form-item-label > label{
+					color: @dark-modal-form-font;
+				}
+				.@{ant-prefix}-input{
+					color: @dark-modal-form-font;
+					background: @dark-modal-form-back;
+					border: 1px solid @dark-modal-form-border;
+
+					::-webkit-input-placeholder {
+						color: @dark-modal-form-font;
+					}
+					:-moz-placeholder {
+						color: @dark-modal-form-font;
+					}
+					::-moz-placeholder {
+						color: @dark-modal-form-font;
+					}
+					:-ms-input-placeholder {
+						color: @dark-modal-form-font;
+					}
+					::-ms-input-placeholder {
+						color: @dark-modal-form-font;
+					}
+					::placeholder {
+						color: @dark-modal-form-font;
+					}
+				}
+				.@{ant-prefix}-select-selection{
+					color: @dark-modal-form-font;
+					background: @dark-modal-form-back;
+					border: 1px solid @dark-modal-form-border;
+					.@{ant-prefix}-select-arrow{
+						color: @dark-modal-form-font;
+					}
+				}
+				.@{ant-prefix}-checkbox-inner{
+					background: none;
+					border: 1px solid @dark-modal-form-border;
+				}
+				.@{ant-prefix}-checkbox-checked{
+					.@{ant-prefix}-checkbox-inner{
+						background: @main-active-color;
+						color: #fff;
+						border: 1px solid @dark-modal-form-border;
+					}
+				}
+				.@{ant-prefix}-checkbox + span{
+					color: @dark-modal-form-font;
+				}
+			}
+			.@{ant-prefix}-modal-footer{
+				background: @dark-modal-body-back;
+			}
+		}
+	}
+}

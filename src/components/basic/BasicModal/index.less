@@ -1,0 +1,91 @@
+.listModalFooter {
+  box-sizing: border-box;
+  padding: 0 20px;
+  text-align: center;
+
+  .modalCancelBtn, .modalSaveBtn {
+    width: 88px;
+    font-size: @standardFontSizeLarge;
+
+    span {
+      display: inline-block;
+      text-align: center;
+      letter-spacing: 3px;
+      width: 100%;
+    }
+  }
+
+  .modalSaveBtn {
+    border: none;
+    background-color: @standardColor;
+    color: #ffffff;
+  }
+
+  .modalCancelBtn {
+
+  }
+}
+
+.commonModal {
+  min-width: 728px;
+
+  .titleWrapper {
+    height: 22px;
+    line-height: 22px;
+
+    .leftBorder {
+      width: 3px;
+      height: 22px;
+      background-color: @standardColor;
+      float: left;
+    }
+
+    .title {
+      margin-left: 8px;
+      font-size: @standardFontSizeLarge;
+      font-weight: @standardFontBoldWeight;
+      float: left;
+    }
+  }
+
+  .dataCenter-modal-content {
+    .dataCenter-modal-header {
+      //padding: 0 24px 0 32px;
+      background-color: #ffffff!important;
+      display: flex;
+      align-items: center;
+    }
+
+    .dataCenter-modal-body {
+      padding: 24px 64px;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: rgba(144, 147, 153, 0.5);
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background: transparent;
+      }
+    }
+
+    .dataCenter-modal-footer {
+      padding-top: 16px;
+      padding-bottom: 2 * @standardPadding;
+    }
+  }
+}
+
+.basicWrapper {
+  padding: 0 @standardPadding;
+  background: #FFFFFF;
+  box-shadow: @standardBoxShadow;
+  border-radius: @standardRadius;
+}
